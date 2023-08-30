@@ -166,6 +166,14 @@ cp -r * %{buildroot}/usr/clearos/apps/php_engines/
 rm -f %{buildroot}/usr/clearos/apps/php_engines/README.md
 rm -f %{buildroot}/usr/clearos/apps/php_engines/packaging/LICENSE-API.txt
 rm -f %{buildroot}/usr/clearos/apps/php_engines/packaging/LICENSE.txt
+ln -s /etc/opt/remi/php74 /etc/opt/rh/rh-php74
+ln -s /etc/opt/remi/php83 /etc/opt/rh/rh-php83
+ln -s /var/opt/remi/php74 /var/opt/rh/rh-php74
+ln -s /var/opt/remi/php83 /var/opt/rh/rh-php83
+ln -s /opt/remi/php74 /opt/rh/rh-php74
+ln -s /opt/remi/php83 /opt/rh/rh-php83
+cp -f /etc/opt/rh/rh-php73/php.ini /etc/opt/rh/rh-php74/php.ini
+cp -f /etc/opt/rh/rh-php73/php.ini /etc/opt/rh/rh-php83/php.ini
 
 install -d -m 0755 %{buildroot}/var/clearos/php_engines
 install -d -m 0755 %{buildroot}/var/clearos/php_engines/backup
