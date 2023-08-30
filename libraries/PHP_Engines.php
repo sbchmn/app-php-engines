@@ -128,10 +128,10 @@ class PHP_Engines extends Engine
     protected $version_codes = array(
         'rh-php56-php-fpm' => 56,
         'rh-php70-php-fpm' => 70,
-        'rh-php71-php-fpm' => 71
-        'rh-php72-php-fpm' => 72
-        'rh-php73-php-fpm' => 73
-        'rh-php74-php-fpm' => 74
+        'rh-php71-php-fpm' => 71,
+        'rh-php72-php-fpm' => 72,
+        'rh-php73-php-fpm' => 73,
+        'rh-php74-php-fpm' => 74,
         'rh-php83-php-fpm' => 83
         
     );
@@ -139,10 +139,10 @@ class PHP_Engines extends Engine
     protected $configs = array(
         'rh-php56-php-fpm' => '/etc/opt/rh/rh-php56/php.ini',
         'rh-php70-php-fpm' => '/etc/opt/rh/rh-php70/php.ini',
-        'rh-php71-php-fpm' => '/etc/opt/rh/rh-php71/php.ini'
-        'rh-php72-php-fpm' => '/etc/opt/rh/rh-php72/php.ini'
-        'rh-php73-php-fpm' => '/etc/opt/rh/rh-php73/php.ini'
-        'rh-php74-php-fpm' => '/etc/opt/rh/rh-php74/php.ini'
+        'rh-php71-php-fpm' => '/etc/opt/rh/rh-php71/php.ini',
+        'rh-php72-php-fpm' => '/etc/opt/rh/rh-php72/php.ini',
+        'rh-php73-php-fpm' => '/etc/opt/rh/rh-php73/php.ini',
+        'rh-php74-php-fpm' => '/etc/opt/rh/rh-php74/php.ini',
         'rh-php83-php-fpm' => '/etc/opt/rh/rh-php83/php.ini'
     );
 
