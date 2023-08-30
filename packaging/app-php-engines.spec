@@ -78,6 +78,78 @@ Requires: rh-php71-php-process
 Requires: rh-php71-php-soap
 Requires: rh-php71-php-xml
 Requires: rh-php71-php-zip
+Requires: php72-php-bcmath
+Requires: php72-php-cli
+Requires: php72-php-common
+Requires: php72-php-fpm
+Requires: php72-php-gd
+Requires: php72-php-gmp
+Requires: php72-php-intl
+Requires: php72-php-json
+Requires: php72-php-ldap
+Requires: php72-php-mbstring
+Requires: php72-php-mysqlnd
+Requires: php72-php-opcache
+Requires: php72-php-pdo
+Requires: php72-php-pear
+Requires: php72-php-process
+Requires: php72-php-soap
+Requires: php72-php-xml
+Requires: php72-php-zip
+Requires: php73-php-bcmath
+Requires: php73-php-cli
+Requires: php73-php-common
+Requires: php73-php-fpm
+Requires: php73-php-gd
+Requires: php73-php-gmp
+Requires: php73-php-intl
+Requires: php73-php-json
+Requires: php73-php-ldap
+Requires: php73-php-mbstring
+Requires: php73-php-mysqlnd
+Requires: php73-php-opcache
+Requires: php73-php-pdo
+Requires: php73-php-pear
+Requires: php73-php-process
+Requires: php73-php-soap
+Requires: php73-php-xml
+Requires: php73-php-zip
+Requires: php74-php-bcmath
+Requires: php74-php-cli
+Requires: php74-php-common
+Requires: php74-php-fpm
+Requires: php74-php-gd
+Requires: php74-php-gmp
+Requires: php74-php-intl
+Requires: php74-php-json
+Requires: php74-php-ldap
+Requires: php74-php-mbstring
+Requires: php74-php-mysqlnd
+Requires: php74-php-opcache
+Requires: php74-php-pdo
+Requires: php74-php-pear
+Requires: php74-php-process
+Requires: php74-php-soap
+Requires: php74-php-xml
+Requires: php74-php-zip
+Requires: php83-php-bcmath
+Requires: php83-php-cli
+Requires: php83-php-common
+Requires: php83-php-fpm
+Requires: php83-php-gd
+Requires: php83-php-gmp
+Requires: php83-php-intl
+Requires: php83-php-json
+Requires: php83-php-ldap
+Requires: php83-php-mbstring
+Requires: php83-php-mysqlnd
+Requires: php83-php-opcache
+Requires: php83-php-pdo
+Requires: php83-php-pear
+Requires: php83-php-process
+Requires: php83-php-soap
+Requires: php83-php-xml
+Requires: php83-php-zip
 
 %description core
 With PHP Engines, an administrator can select the PHP version to run inside each web server virtual host.
@@ -105,9 +177,17 @@ install -D -m 0755 packaging/php_wrapper %{buildroot}/usr/clearos/bin/php
 install -D -m 0644 packaging/rh-php56-php-fpm.php %{buildroot}/var/clearos/base/daemon/rh-php56-php-fpm.php
 install -D -m 0644 packaging/rh-php70-php-fpm.php %{buildroot}/var/clearos/base/daemon/rh-php70-php-fpm.php
 install -D -m 0644 packaging/rh-php71-php-fpm.php %{buildroot}/var/clearos/base/daemon/rh-php71-php-fpm.php
+install -D -m 0644 packaging/rh-php72-php-fpm.php %{buildroot}/var/clearos/base/daemon/rh-php72-php-fpm.php
+install -D -m 0644 packaging/rh-php73-php-fpm.php %{buildroot}/var/clearos/base/daemon/rh-php73-php-fpm.php
+install -D -m 0644 packaging/rh-php74-php-fpm.php %{buildroot}/var/clearos/base/daemon/rh-php74-php-fpm.php
+install -D -m 0644 packaging/rh-php83-php-fpm.php %{buildroot}/var/clearos/base/daemon/rh-php83-php-fpm.php
 install -D -m 0644 packaging/www_path.conf %{buildroot}/etc/opt/rh/rh-php56/php-fpm.d/www_path.conf
 install -D -m 0644 packaging/www_path.conf %{buildroot}/etc/opt/rh/rh-php70/php-fpm.d/www_path.conf
 install -D -m 0644 packaging/www_path.conf %{buildroot}/etc/opt/rh/rh-php71/php-fpm.d/www_path.conf
+install -D -m 0644 packaging/www_path.conf %{buildroot}/etc/opt/rh/rh-php72/php-fpm.d/www_path.conf
+install -D -m 0644 packaging/www_path.conf %{buildroot}/etc/opt/rh/rh-php73/php-fpm.d/www_path.conf
+install -D -m 0644 packaging/www_path.conf %{buildroot}/etc/opt/rh/rh-php74/php-fpm.d/www_path.conf
+install -D -m 0644 packaging/www_path.conf %{buildroot}/etc/opt/rh/rh-php83/php-fpm.d/www_path.conf
 
 %post
 logger -p local6.notice -t installer 'app-php-engines - installing'
@@ -163,6 +243,13 @@ exit 0
 /var/clearos/base/daemon/rh-php56-php-fpm.php
 /var/clearos/base/daemon/rh-php70-php-fpm.php
 /var/clearos/base/daemon/rh-php71-php-fpm.php
+/var/clearos/base/daemon/rh-php72-php-fpm.php
+/var/clearos/base/daemon/rh-php73-php-fpm.php
+/var/clearos/base/daemon/rh-php74-php-fpm.php
 %config(noreplace) /etc/opt/rh/rh-php56/php-fpm.d/www_path.conf
 %config(noreplace) /etc/opt/rh/rh-php70/php-fpm.d/www_path.conf
 %config(noreplace) /etc/opt/rh/rh-php71/php-fpm.d/www_path.conf
+%config(noreplace) /etc/opt/rh/rh-php72/php-fpm.d/www_path.conf
+%config(noreplace) /etc/opt/rh/rh-php73/php-fpm.d/www_path.conf
+%config(noreplace) /etc/opt/rh/rh-php74/php-fpm.d/www_path.conf
+%config(noreplace) /etc/opt/rh/rh-php83/php-fpm.d/www_path.conf
