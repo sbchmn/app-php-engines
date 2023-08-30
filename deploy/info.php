@@ -187,6 +187,7 @@ $app['core_file_manifest'] = array(
     'rh-php72-php-fpm.php' => array('target' => '/var/clearos/base/daemon/rh-php72-php-fpm.php'),
     'rh-php73-php-fpm.php' => array('target' => '/var/clearos/base/daemon/rh-php73-php-fpm.php'),
     'rh-php74-php-fpm.php' => array('target' => '/var/clearos/base/daemon/rh-php74-php-fpm.php'),
+    'rh-php83-php-fpm.php' => array('target' => '/var/clearos/base/daemon/rh-php83-php-fpm.php'),
     'apache-php_engines_path.conf' => array(
         'target' => '/etc/httpd/conf.d/php_engines_path.conf',
         'config' => TRUE,
