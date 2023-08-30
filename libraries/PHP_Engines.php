@@ -107,26 +107,38 @@ class PHP_Engines extends Engine
         'httpd' => 'PHP 5.4',
         'rh-php56-php-fpm' => 'PHP 5.6',
         'rh-php70-php-fpm' => 'PHP 7.0',
-        'rh-php71-php-fpm' => 'PHP 7.1'
+        'rh-php71-php-fpm' => 'PHP 7.1',
+        'rh-php72-php-fpm' => 'PHP 7.2',
+        'rh-php73-php-fpm' => 'PHP 7.3',
+        'rh-php74-php-fpm' => 'PHP 7.4'
     );
 
     protected $ports = array(
         'httpd' => 0,
         'rh-php56-php-fpm' => 9056,
         'rh-php70-php-fpm' => 9070,
-        'rh-php71-php-fpm' => 9071
+        'rh-php71-php-fpm' => 9071,
+        'rh-php72-php-fpm' => 9072,
+        'rh-php73-php-fpm' => 9073,
+        'rh-php74-php-fpm' => 9074
     );
 
     protected $version_codes = array(
         'rh-php56-php-fpm' => 56,
         'rh-php70-php-fpm' => 70,
-        'rh-php71-php-fpm' => 71
+        'rh-php71-php-fpm' => 71,
+        'rh-php72-php-fpm' => 72,
+        'rh-php73-php-fpm' => 73,
+        'rh-php74-php-fpm' => 74
     );
 
     protected $configs = array(
         'rh-php56-php-fpm' => '/etc/opt/rh/rh-php56/php.ini',
         'rh-php70-php-fpm' => '/etc/opt/rh/rh-php70/php.ini',
-        'rh-php71-php-fpm' => '/etc/opt/rh/rh-php71/php.ini'
+        'rh-php71-php-fpm' => '/etc/opt/rh/rh-php71/php.ini',
+        'rh-php72-php-fpm' => '/etc/opt/rh/rh-php72/php.ini',
+        'rh-php73-php-fpm' => '/etc/opt/rh/rh-php73/php.ini',
+        'rh-php74-php-fpm' => '/etc/opt/rh/rh-php74/php.ini'
     );
 
     const FILE_APP_CONFIG = '/etc/clearos/php_engines.conf';
@@ -165,6 +177,9 @@ class PHP_Engines extends Engine
         $php_timezone = $php->get_detected_timezone('php_engines');
 
         foreach ($this->configs as $engine => $config) {
+            if (! file_exists($config))
+                continue;
+
             $file = new File($config);
 
             $replaced = $file->replace_lines('/^date.timezone\s*=/', "date.timezone = $php_timezone\n");
@@ -218,7 +233,7 @@ class PHP_Engines extends Engine
     public function get_services()
     {
         clearos_profile(__METHOD__, __LINE__);
-        
+
         foreach ($this->supported as $service => $description) {
             $filename = self::PATH_DAEMONS . '/' . $service . '.php';
             $file = new File($filename);
