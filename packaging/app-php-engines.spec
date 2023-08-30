@@ -166,14 +166,19 @@ cp -r * %{buildroot}/usr/clearos/apps/php_engines/
 rm -f %{buildroot}/usr/clearos/apps/php_engines/README.md
 rm -f %{buildroot}/usr/clearos/apps/php_engines/packaging/LICENSE-API.txt
 rm -f %{buildroot}/usr/clearos/apps/php_engines/packaging/LICENSE.txt
+ln -s /etc/opt/remi/php56 /etc/opt/rh/rh-php56
 ln -s /etc/opt/remi/php74 /etc/opt/rh/rh-php74
 ln -s /etc/opt/remi/php83 /etc/opt/rh/rh-php83
+ln -s /var/opt/remi/php56 /var/opt/rh/rh-php56
 ln -s /var/opt/remi/php74 /var/opt/rh/rh-php74
 ln -s /var/opt/remi/php83 /var/opt/rh/rh-php83
+ln -s /opt/remi/php56 /opt/rh/rh-php56
 ln -s /opt/remi/php74 /opt/rh/rh-php74
 ln -s /opt/remi/php83 /opt/rh/rh-php83
+ln -s /usr/lib/systemd/system/php56-php-fpm.service /usr/lib/systemd/system/rh-php56-php-fpm.service
 ln -s /usr/lib/systemd/system/php74-php-fpm.service /usr/lib/systemd/system/rh-php74-php-fpm.service
 ln -s /usr/lib/systemd/system/php83-php-fpm.service /usr/lib/systemd/system/rh-php83-php-fpm.service
+cp -f /etc/opt/rh/rh-php73/php.ini /etc/opt/rh/rh-php56/php.ini
 cp -f /etc/opt/rh/rh-php73/php.ini /etc/opt/rh/rh-php74/php.ini
 cp -f /etc/opt/rh/rh-php73/php.ini /etc/opt/rh/rh-php83/php.ini
 
