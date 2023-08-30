@@ -19,7 +19,7 @@ clearos_load_language('php_engines');
 
 $configlet = array(
 	'title' => 'PHP 8.3 Engine',
-	'package' => 'rh-php83-php-fpm',
+	'package' => 'php83-php-fpm',
 	'process_name' => 'php-fpm',
     'pid_file' => '/var/opt/rh/rh-php83/run/php-fpm/php-fpm.pid',
     'skip_pidof' => TRUE,
