@@ -19,7 +19,7 @@ clearos_load_language('php_engines');
 
 $configlet = array(
 	'title' => 'PHP 7.4 Engine',
-	'package' => 'rh-php74-php-fpm',
+	'package' => 'php74-php-fpm',
 	'process_name' => 'php-fpm',
     'pid_file' => '/var/opt/rh/rh-php74/run/php-fpm/php-fpm.pid',
     'skip_pidof' => TRUE,
